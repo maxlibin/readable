@@ -46,7 +46,8 @@ const postsReducer = (state = initialState, action) => {
     case postsConst.DELETE_POST:
       return {
         ...state,
-        data: state.data.filter((post) => post.id !== action.id)
+        data: state.data.filter((post) => post.id !== action.id),
+        postDetail: {},
       };
 
     case postsConst.GET_ALL_POSTS:

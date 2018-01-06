@@ -140,7 +140,10 @@ class PostForm extends Component {
 
 PostForm.propTypes = {
   categories: propTypes.array,
-  location: propTypes.string,
+  location: propTypes.oneOfType([
+    propTypes.string,
+    propTypes.object,
+  ]),
   handleOnSubmit: propTypes.func,
   editPost: propTypes.bool,
 };

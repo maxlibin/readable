@@ -1,15 +1,48 @@
 import React, {Component, Fragment} from "react";
 import PropTypes from "prop-types";
+import {orderBy} from "lodash";
 import "./Table.css";
 
 class Table extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      sort: "title",
+      sortDirection: "desc"
+    }
+  }
+
+  handleSort = (sortBy) => {
+    this.setState({
+      sort: sortBy,
+      sortDirection: this.state.sortDirection === "asc" ? "desc" : "asc",
+    });
+  };
+
   renderHeader = () => {
     return (
       <tr>
         <th />
-        <th>Title</th>
-        <th>Comments</th>
-        <th colSpan="2">Scores</th>
+        <th
+          onClick={() => this.handleSort("title")}
+          className={`sortable ${this.state.sort === "title" ? `sort_${this.state.sortDirection}` : ""}`}
+        >
+          Title
+        </th>
+        <th
+          onClick={() => this.handleSort("commentCount")}
+          className={`sortable ${this.state.sort === "commentCount" ? `sort_${this.state.sortDirection}` : ""}`}
+        >
+          Comments
+        </th>
+        <th
+          colSpan="2"
+          onClick={() => this.handleSort("voteScore")}
+          className={`sortable ${this.state.sort === "voteScore" ? `sort_${this.state.sortDirection}` : ""}`}
+        >
+          Scores
+        </th>
         <th/>
         <th/>
         <th />
@@ -21,7 +54,7 @@ class Table extends Component {
     return (
       <tr
         key={post.title}
-        onClick={() => this.props.history.push(`/post/${post.id}`)}
+        onClick={() => this.props.history.push(`/${post.category}/${post.id}`)}
       >
         <td />
         <td>
@@ -83,6 +116,8 @@ class Table extends Component {
 
   render() {
     let {posts} = this.props;
+    posts = orderBy(posts, [this.state.sort], [this.state.sortDirection]);
+
     return (
       <div className="tableContainer">
         <table>

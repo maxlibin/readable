@@ -3,9 +3,14 @@ import Table from "./Table";
 import {Link} from "react-router-dom";
 import Loading from "./Loading";
 import propTypes from "prop-types";
+import Notfound from "./Notfound";
+
 import "./Posts.css";
 
 class Posts extends Component {
+  constructor(props) {
+    super(props);
+  }
   componentDidMount() {
     const category = this.props.match.params.category || "all";
     this.props.getPostsAction(category);
@@ -19,7 +24,24 @@ class Posts extends Component {
   }
 
   render() {
-    const {posts, loading, match, doVoteAction, history, deletePostAction} = this.props;
+    const {
+      posts,
+      loading,
+      match,
+      doVoteAction,
+      history,
+      deletePostAction,
+      categories,
+    } = this.props;
+
+    if (
+      !loading &&
+      match.url !== "/" &&
+      !categories.find((category) => category.name === match.params.category)
+    ) {
+      return <Notfound />
+    }
+
     return (
       <div className="App">
         {loading ? (
@@ -43,6 +65,7 @@ class Posts extends Component {
               history={history}
               vote={doVoteAction}
               delete={deletePostAction}
+              category={match.params.category}
             />
           </div>
         )}
@@ -52,6 +75,7 @@ class Posts extends Component {
 }
 
 Posts.propTypes = {
+  categories: propTypes.array,
   posts: propTypes.array,
   doVoteAction: propTypes.func,
   deletePostAction: propTypes.func,
@@ -62,6 +86,7 @@ Posts.propTypes = {
 };
 
 Posts.defaultProps = {
+  categories: [],
   posts: [],
   doVoteAction: () => false,
   deletePostAction: () => false,

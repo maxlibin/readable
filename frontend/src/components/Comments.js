@@ -37,7 +37,10 @@ class Posts extends Component {
     const {comments} = this.props;
     return (
       <div className="Comments">
-        <h5>Comments:</h5>
+        <div className="commentTitle">
+          <h5>Comments:</h5>
+          <small className="commentsCount"> total {comments.length} {comments.length === 1 ? "comment" : "comments"}</small>
+        </div>
         {comments.length === 0 && (
           <p>There were no comment in this post, please add one.</p>
         )}

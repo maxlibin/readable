@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import Post from "../components/Post";
-import {getPostDetailAction, doVoteAction} from "../actions/postsAction";
+import {getPostDetailAction, doVoteAction, deletePostAction} from "../actions/postsAction";
 
 const PostContainer = connect(({posts}) => ({
   postDetail: posts.postDetail.data,
@@ -8,6 +8,7 @@ const PostContainer = connect(({posts}) => ({
 }), {
   getPostDetailAction,
   doVoteAction,
+  deletePostAction
 })(Post);
 
 export default PostContainer;

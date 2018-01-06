@@ -7,6 +7,21 @@
   padding-left: 64px;
   padding-right: 64px;
 
+  .commentTitle {
+    display: flex;
+
+    h5 {
+      margin-right: auto;
+    }
+  }
+
+  .commentsCount {
+    opacity: .6;
+    font-size: 14px;
+    position: relative;
+    top: 3px;
+  }
+
   .comment-box {
     border-bottom: 1px solid #eee;
     padding: 10px 0;
