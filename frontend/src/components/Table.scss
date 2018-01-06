@@ -1,0 +1,160 @@
+.tableContainer {
+  width: 100%;
+  
+  .empty-posts {
+
+    &:hover {
+      td {
+        background-color: initial;
+        border-top: none !important;
+      }
+    }
+
+    p {
+      padding: 16px;
+      font-size: 14px;
+    }
+  }
+
+  table {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+  }
+
+  thead {
+    th {
+      padding: 8px 10px;
+      font-size: 13px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+
+      &:first-child {
+        border-top: none;
+        border-bottom: none;
+        padding-right: 0;
+        padding-left: 0;
+        width: 16px;
+      }
+
+      &:last-child {
+        border-top: none;
+        border-bottom: none;
+        padding-left: 0;
+        padding-right: 0;
+        width: 16px;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        cursor: pointer;
+        td {
+          background-color: #f9f9f9;
+
+          &:first-child {
+            border-top: 1px solid #eee;
+          }
+
+          &:last-child {
+            border-top: 1px solid #eee;
+          }
+        }
+
+        + tr {
+          td {
+            &:first-child {
+              border-top: 1px solid #eee;
+            }
+
+            &:last-child {
+              border-top: 1px solid #eee;
+            }
+          }
+        }
+      }
+    }
+    td {
+      padding: 8px 10px;
+      border-top: 1px solid #eee;
+
+      h4 {
+        font-size: 16px;
+        margin: 0;
+      }
+
+      small {
+        opacity: .7;
+      }
+
+      &:first-child {
+        border-top: none;
+        padding-right: 0;
+        padding-left: 0;
+        width: 16px;
+      }
+
+      &:last-child {
+        border-top: none;
+        padding-right: 0;
+        padding-left: 0;
+        width: 16px;
+      }
+      &.delete {
+        text-align: right;
+      }
+      .deleteBtn,
+      .editBtn {
+        cursor: pointer;
+        opacity: .7;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        svg {
+          position: relative;
+          top: 2px;
+        }
+      }
+
+      .arrow {
+        content: '';
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        width: 0;
+        height: 0;
+        display: block;
+        margin: 3px 8px;
+        cursor: pointer;
+
+        &.up {
+          border-bottom: 6px solid #666;
+
+          &:hover {
+            border-bottom-color: green;
+          }
+        }
+
+        &.down {
+          border-top: 6px solid #666;
+          &:hover {
+            border-top-color: red;
+          }
+        }
+      }
+
+      &.voting,
+      &.scores {
+        width: 0.001%;
+      }
+      &.scores {
+        text-align: right;
+      }
+      &.voting {
+        padding-left: 0;
+      }
+    }
+  }
+}

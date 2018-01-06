@@ -1,0 +1,71 @@
+.Comments {
+  display: block;
+  clear: both;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-top: 20px;
+  padding-left: 64px;
+  padding-right: 64px; }
+  .Comments .comment-box {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    font-size: 14px;
+    display: block; }
+    .Comments .comment-box p {
+      margin-bottom: 6px;
+      line-height: 18px; }
+    .Comments .comment-box small {
+      opacity: .7; }
+    .Comments .comment-box-wrapper {
+      display: flex; }
+      .Comments .comment-box-wrapper .commentVote {
+        width: 55px;
+        padding-right: 20px;
+        text-align: center; }
+      .Comments .comment-box-wrapper .arrow {
+        content: '';
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        width: 0;
+        height: 0;
+        display: block;
+        margin: 2px 10px;
+        cursor: pointer; }
+        .Comments .comment-box-wrapper .arrow.up {
+          border-bottom: 8px solid #666; }
+          .Comments .comment-box-wrapper .arrow.up:hover {
+            border-bottom-color: green; }
+        .Comments .comment-box-wrapper .arrow.down {
+          border-top: 8px solid #666; }
+          .Comments .comment-box-wrapper .arrow.down:hover {
+            border-top-color: red; }
+  .Comments .editBtnNone {
+    font-size: 12px;
+    padding: 0;
+    position: relative;
+    top: -1px; }
+    .Comments .editBtnNone svg {
+      height: 12px; }
+
+.commentForm {
+  margin: 20px 0;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #eee; }
+  .commentForm h6 {
+    margin-bottom: 30px; }
+  .commentForm input,
+  .commentForm textarea {
+    border-radius: 0;
+    resize: none;
+    min-width: 100%;
+    font-size: 14px; }
+  .commentForm input {
+    height: 26px; }
+  .commentForm .row {
+    width: 100%;
+    padding-right: 50%;
+    margin-bottom: 10px; }
+  .commentForm .btn {
+    width: 100%; }

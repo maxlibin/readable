@@ -1,0 +1,81 @@
+.posts-wrapper h3 {
+  margin-bottom: 20px;
+  text-transform: capitalize; }
+
+.posts-wrapper .title {
+  display: flex; }
+  .posts-wrapper .title .btn {
+    height: 32px;
+    font-weight: bold;
+    line-height: 18px;
+    font-size: 14px;
+    padding: 6px 16px;
+    margin: 3px 0 0 auto;
+    vertical-align: top;
+    cursor: pointer; }
+
+.Post {
+  display: flex; }
+  .PostWrapper {
+    display: block; }
+  .Post .metaData {
+    opacity: .5;
+    font-size: 14px; }
+  .Post .postVote {
+    width: 44px;
+    margin-right: 20px; }
+  .Post .score {
+    text-align: center;
+    display: block;
+    font-weight: bold; }
+  .Post .arrow {
+    content: '';
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    width: 0;
+    height: 0;
+    display: block;
+    margin: 10px;
+    cursor: pointer; }
+    .Post .arrow.up {
+      border-bottom: 12px solid #666; }
+      .Post .arrow.up:hover {
+        border-bottom-color: green; }
+    .Post .arrow.down {
+      border-top: 12px solid #666; }
+      .Post .arrow.down:hover {
+        border-top-color: red; }
+
+.postEditorTitle {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee; }
+
+.postForm .label strong {
+  margin-top: 5px;
+  display: block; }
+
+.postForm input,
+.postForm textarea {
+  border-radius: 0; }
+
+.postForm .btn {
+  cursor: pointer; }
+
+.editBtnNone {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 10px;
+  position: relative;
+  top: -2px;
+  opacity: .5;
+  cursor: pointer; }
+  .editBtnNone:focus {
+    outline: none; }
+  .editBtnNone:hover {
+    opacity: .7; }
+  .editBtnNone svg {
+    position: relative;
+    top: 2px; }
